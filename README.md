@@ -6,7 +6,7 @@ In this repository we provide code of the paper:
 > 
 > paper link: https://ieeexplore.ieee.org/abstract/document/10647468
 
-<p align="right">
+<p align="center">
   <img src="vis/teaser.gif" />
 </p>
 

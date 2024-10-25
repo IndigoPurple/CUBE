@@ -1,5 +1,62 @@
 # CUBE
-Code and data of "Controllable Unsupervised Event-based Video Generation"
+In this repository we provide code of the paper:
+> **Controllable Unsupervised Event-Based Video Generation (ICIP Oral)**
+> 
+> Yaping Zhao, Pei Zhang, Chutian Wang, Edmund Y. Lam
+> 
+> paper link: https://ieeexplore.ieee.org/abstract/document/10647468
+
+<p align="right">
+  <img src="vis/teaser.gif" />
+</p>
+
+## Usage
+
+### 1. Download Weight
+All pre-trained weights are downloaded to `checkpoints/` directory, including the pre-trained weights of [Stable Diffusion v1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5), ControlNet conditioned on [canny edges](https://huggingface.co/lllyasviel/sd-controlnet-canny). 
+The `flownet.pkl` is the weights of [RIFE](https://github.com/megvii-research/ECCV2022-RIFE).
+The final file tree likes:
+
+```none
+checkpoints
+├── stable-diffusion-v1-5
+├── sd-controlnet-canny
+├── flownet.pkl
+```
+
+### 2. Requirements
+
+```shell
+conda create -n cube python=3.10
+conda activate cube
+pip install -r requirements.txt
+```
+`xformers` is recommended to save memory and running time.
+
+### 3. Inference
+To reproduce the main results from our paper, simply run:
+```bash
+sh inference_moonwalk.sh
+sh inference_violin.sh
+sh inference_sofa.sh
+sh inference_man.sh
+sh inference_girl.sh
+```
+To run you own experiment on text-to-video generation, modify the bash, e.g., `inference_moonwalk.sh`:
+```bash
+python inference.py \
+    --prompt "James bond does the moonwalk on the desert." \
+    --condition "canny" \
+    --video_path "../data/moonwalk.mp4" \
+    --output_path "outputs/" \
+    --video_length 15 \
+    --smoother_steps 19 20 \
+    --width 512 \
+    --height 512
+    #--is_long_video
+```
+where `--video_length` is the length of synthesized video, `--condition` represents the type of structure sequence,
+`--smoother_steps` determines at which timesteps to perform smoothing, and `--is_long_video` denotes whether to enable efficient long-video synthesis.
 
 ## Visualizations
 
@@ -99,5 +156,16 @@ Code and data of "Controllable Unsupervised Event-based Video Generation"
 </tr>
 </table>
 
-## Notification
-The code will be released after the paper presentation at the conference in October 2024.
+## Citation
+Cite our paper if you find it interesting!
+```
+@INPROCEEDINGS{zhao2024controllable,
+  author={Zhao, Yaping and Zhang, Pei and Wang, Chutian and Lam, Edmund Y.},
+  booktitle={EEE International Conference on Image Processing (ICIP)}, 
+  title={Controllable Unsupervised Event-Based Video Generation}, 
+  year={2024},
+  pages={2278-2284},
+  doi={10.1109/ICIP51287.2024.10647468}}
+```
+
+This code is implemented based on [ControlVideo](https://github.com/YBYBZhang/ControlVideo).

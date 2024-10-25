@@ -1,7 +1,7 @@
 # CUBE
 In this repository we provide code of the paper:
 > **Controllable Unsupervised Event-Based Video Generation**
-> (accepted as ICIP Oral and invited by WACV workshop)
+> (accepted as ICIP oral and invited by WACV workshop)
 > 
 > Yaping Zhao, Pei Zhang, Chutian Wang, Edmund Y. Lam
 > 

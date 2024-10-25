@@ -37,7 +37,7 @@ pip install -r requirements.txt
 ### 3. Inference
 
 #### 3.1. Edge Extraction
-Event streams used in our experiment are provided in the `data/event` folder.
+Event streams used in our experiments are provided in the `data/event` folder.
 
 To extract edges from the event data, simply run:
 ```

@@ -35,7 +35,19 @@ pip install -r requirements.txt
 `xformers` is recommended to save memory and running time.
 
 ### 3. Inference
-To reproduce the main results from our paper, simply run:
+
+#### 3.1. Edge Extraction
+Event streams used in our experiment are provided in the `data/event` folder.
+
+To extract edges from the event data, simply run:
+```
+python edge_extraction.py
+```
+The extracted edges could be found in the `data\edge` folder.
+
+#### 3.2. Video Generation
+
+To generate videos as shown in our paper, simply run:
 ```bash
 sh inference_moonwalk.sh
 sh inference_violin.sh
@@ -58,6 +70,8 @@ python inference.py \
 ```
 where `--video_length` is the length of synthesized video, `--condition` represents the type of structure sequence,
 `--smoother_steps` determines at which timesteps to perform smoothing, and `--is_long_video` denotes whether to enable efficient long-video synthesis.
+
+The generated videos could be found in the `outputs` folder.
 
 ## Visualizations
 

@@ -60,7 +60,7 @@ To run you own experiment on text-to-video generation, modify the bash, e.g., `i
 python inference.py \
     --prompt "James bond does the moonwalk on the desert." \
     --condition "canny" \
-    --video_path "../data/moonwalk.mp4" \
+    --video_path "data/moonwalk.mp4" \
     --output_path "outputs/" \
     --video_length 15 \
     --smoother_steps 19 20 \
@@ -176,7 +176,7 @@ Cite our paper if you find it interesting!
 ```
 @INPROCEEDINGS{zhao2024controllable,
   author={Zhao, Yaping and Zhang, Pei and Wang, Chutian and Lam, Edmund Y.},
-  booktitle={EEE International Conference on Image Processing (ICIP)}, 
+  booktitle={IEEE International Conference on Image Processing (ICIP)}, 
   title={Controllable Unsupervised Event-Based Video Generation}, 
   year={2024},
   pages={2278-2284},

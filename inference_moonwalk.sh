@@ -1,7 +1,7 @@
 python inference.py \
     --prompt "James bond does the moonwalk on the desert." \
     --condition "canny" \
-    --video_path "data/moonwalk.mp4" \
+    --video_path "data/edge/moonwalk.mp4" \
     --output_path "outputs/" \
     --video_length 15 \
     --smoother_steps 19 20 \
@@ -14,7 +14,7 @@ echo "DONE! James bond does the moonwalk on the desert."
 python inference.py \
     --prompt "An astronaut does the moonwalk on the moon." \
     --condition "canny" \
-    --video_path "data/moonwalk.mp4" \
+    --video_path "data/edge/moonwalk.mp4" \
     --output_path "outputs/" \
     --video_length 15 \
     --smoother_steps 19 20 \
@@ -27,7 +27,7 @@ echo "DONE! An astronaut does the moonwalk on the moon."
 python inference.py \
     --prompt "Iron man does the moonwalk on the road." \
     --condition "canny" \
-    --video_path "data/moonwalk.mp4" \
+    --video_path "data/edge/moonwalk.mp4" \
     --output_path "outputs/" \
     --video_length 15 \
     --smoother_steps 19 20 \
